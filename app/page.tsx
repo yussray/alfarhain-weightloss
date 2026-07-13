@@ -178,7 +178,7 @@ export default function Home() {
         </section>
 
         <section id="lokasi" className="px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-          <div className="mx-auto grid max-w-[80rem] overflow-hidden rounded-[2rem] bg-[#dff0ea] lg:grid-cols-2">
+          <div className="mx-auto grid max-w-[80rem] overflow-hidden rounded-[2rem] bg-[#dff0ea] lg:min-h-[38rem] lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[22rem]"><Image src="/clinic/alfarhain-kok-lanas.webp" alt="Pusat Rawatan Al-Farhain di Kok Lanas" fill unoptimized sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" /></div>
             <div className="p-7 sm:p-10 lg:p-14"><p className="text-xs font-bold uppercase tracking-[0.22em] text-[#034e4b]">Kunjungi kami</p><h2 className="mt-4 text-3xl font-medium tracking-[-0.04em] sm:text-4xl">Pusat Rawatan Al-Farhain Kok Lanas</h2><p className="mt-8 leading-7 text-[#5f6d6c]">{clinic.address}</p><p className="mt-5 font-semibold text-[#315a52]">{clinic.hours}</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button href={clinic.locationHref}>Lihat lokasi klinik</Button><Button href={clinic.phoneHref} outline>Telefon {clinic.phone}</Button></div></div>
           </div>
