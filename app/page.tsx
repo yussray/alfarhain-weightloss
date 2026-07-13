@@ -67,7 +67,7 @@ export default function Home() {
     <div className="overflow-hidden bg-[#f7f5ee] pb-20 sm:pb-0">
       <header className="sticky top-0 z-40 border-b border-[#034e4b]/10 bg-[#e8f3ef]/95 backdrop-blur">
         <div className="mx-auto flex max-w-[80rem] items-center justify-between gap-5 px-4 py-4 sm:px-6 lg:px-8">
-          <Image src="/brand/alfarhain-logo.png" alt="Pusat Rawatan Al-Farhain" width={184} height={50} priority className="h-11 w-auto" />
+          <Image src="/brand/alfarhain-logo.png" alt="Pusat Rawatan Al-Farhain" width={184} height={50} priority unoptimized className="h-11 w-auto" />
           <nav className="hidden items-center gap-6 text-sm font-semibold text-[#315a52] lg:flex" aria-label="Navigasi utama">
             <a href="#perjalanan" className="hover:text-[#034e4b]">Proses konsultasi</a>
             <a href="#doktor" className="hover:text-[#034e4b]">Doktor</a>
@@ -102,7 +102,7 @@ export default function Home() {
             </div>
             <div className="relative mx-auto w-full max-w-[38rem] reveal-delay lg:justify-self-end">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#dce9e5] shadow-[0_35px_90px_rgba(0,0,0,0.28)] sm:aspect-[5/6]">
-                <Image src="/services/weight-management-hero.webp" alt="Sesi perbincangan kesihatan di Pusat Rawatan Al-Farhain" fill priority sizes="(max-width: 1024px) 92vw, 48vw" className="object-cover" />
+                <Image src="/services/weight-management-hero.webp" alt="Sesi perbincangan kesihatan di Pusat Rawatan Al-Farhain" fill priority unoptimized sizes="(max-width: 1024px) 92vw, 48vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#062f2d]/70 via-transparent to-transparent" />
                 <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/20 bg-[#073f3d]/90 p-5 backdrop-blur-md sm:inset-x-7 sm:bottom-7 sm:p-6">
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8edbd0]">Dikendalikan oleh</p>
@@ -156,7 +156,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-[80rem] gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
             <div className="lg:sticky lg:top-32 lg:self-start"><Heading eyebrow="Kenali doktor anda" title="Dipimpin dengan empati, disusun dengan teliti." description="Dr. Syaza dan Dr. Athirah mengendalikan Klinik Obesiti Al-Farhain dengan pendekatan berpusatkan pesakit." /><div className="mt-8"><Button href={clinic.whatsappHref}>Tanya pasukan klinik</Button></div></div>
             <div className="grid gap-5 sm:grid-cols-2">
-              {[["Dr. Syaza", "/doctors/dr-syaza.jpg", "Potret Dr. Syaza"], ["Dr. Nur Athirah Binti Hashim", "/doctors/dr-athirah.jpg", "Potret Dr. Nur Athirah Binti Hashim"]].map(([name, image, alt]) => <figure key={name} className="overflow-hidden rounded-[2rem] bg-[#dce5df]"><div className="relative aspect-[4/5]"><Image src={image} alt={alt} fill sizes="(max-width: 640px) 92vw, 30vw" className="object-cover object-top" /></div><figcaption className="border-t border-[#034e4b]/10 bg-[#e7eee9] p-6"><p className="text-xl font-semibold tracking-tight">{name}</p><p className="mt-1 text-sm text-[#5f6d6c]">Doktor Klinik Obesiti</p></figcaption></figure>)}
+              {[["Dr. Syaza", "/doctors/dr-syaza.jpg", "Potret Dr. Syaza"], ["Dr. Nur Athirah Binti Hashim", "/doctors/dr-athirah.jpg", "Potret Dr. Nur Athirah Binti Hashim"]].map(([name, image, alt]) => <figure key={name} className="overflow-hidden rounded-[2rem] bg-[#dce5df]"><div className="relative aspect-[4/5]"><Image src={image} alt={alt} fill unoptimized sizes="(max-width: 640px) 92vw, 30vw" className="object-cover object-top" /></div><figcaption className="border-t border-[#034e4b]/10 bg-[#e7eee9] p-6"><p className="text-xl font-semibold tracking-tight">{name}</p><p className="mt-1 text-sm text-[#5f6d6c]">Doktor Klinik Obesiti</p></figcaption></figure>)}
             </div>
           </div>
         </section>
@@ -172,7 +172,7 @@ export default function Home() {
 
         <section id="lokasi" className="px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="mx-auto grid max-w-[80rem] overflow-hidden rounded-[2rem] bg-[#dff0ea] lg:grid-cols-2">
-            <div className="relative min-h-[22rem]"><Image src="/clinic/alfarhain-kok-lanas.webp" alt="Pusat Rawatan Al-Farhain di Kok Lanas" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" /></div>
+            <div className="relative min-h-[22rem]"><Image src="/clinic/alfarhain-kok-lanas.webp" alt="Pusat Rawatan Al-Farhain di Kok Lanas" fill unoptimized sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" /></div>
             <div className="p-7 sm:p-10 lg:p-14"><p className="text-xs font-bold uppercase tracking-[0.22em] text-[#034e4b]">Kunjungi kami</p><h2 className="mt-4 text-3xl font-medium tracking-[-0.04em] sm:text-4xl">Pusat Rawatan Al-Farhain Kok Lanas</h2><p className="mt-8 leading-7 text-[#5f6d6c]">{clinic.address}</p><p className="mt-5 font-semibold text-[#315a52]">{clinic.hours}</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button href={clinic.locationHref}>Lihat lokasi klinik</Button><Button href={clinic.phoneHref} outline>Telefon {clinic.phone}</Button></div></div>
           </div>
         </section>
@@ -184,7 +184,7 @@ export default function Home() {
         <p className="mx-auto max-w-[80rem] px-4 pb-10 text-center text-xs leading-5 text-[#5f6d6c]">Maklumat ini bertujuan sebagai penerangan umum dan bukan pengganti konsultasi perubatan. Kesesuaian setiap pilihan bergantung pada penilaian doktor.</p>
       </main>
 
-      <footer className="border-t border-[#034e4b]/10 bg-[#e8f3ef] px-4 py-10 sm:px-6 lg:px-8"><div className="mx-auto flex max-w-[80rem] flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"><Image src="/brand/alfarhain-logo.png" alt="Pusat Rawatan Al-Farhain" width={180} height={48} className="h-11 w-auto" /><p className="max-w-xl text-sm leading-6 text-[#5f6d6c]">Peneraju penjagaan kesihatan primer di Pantai Timur. Penjagaan kesihatan yang menyeluruh, berkualiti dan mudah diakses untuk komuniti.</p></div></footer>
+      <footer className="border-t border-[#034e4b]/10 bg-[#e8f3ef] px-4 py-10 sm:px-6 lg:px-8"><div className="mx-auto flex max-w-[80rem] flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"><Image src="/brand/alfarhain-logo.png" alt="Pusat Rawatan Al-Farhain" width={180} height={48} unoptimized className="h-11 w-auto" /><p className="max-w-xl text-sm leading-6 text-[#5f6d6c]">Peneraju penjagaan kesihatan primer di Pantai Timur. Penjagaan kesihatan yang menyeluruh, berkualiti dan mudah diakses untuk komuniti.</p></div></footer>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#034e4b]/15 bg-[#f7f7f4] px-4 py-3 shadow-[0_-10px_30px_rgba(3,78,75,0.12)] sm:hidden"><div className="grid grid-cols-2 gap-3"><Button href={clinic.phoneHref} outline>Telefon klinik</Button><Button href={clinic.whatsappHref}>WhatsApp kami</Button></div></div>
     </div>
