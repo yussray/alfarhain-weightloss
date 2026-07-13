@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 const clinic = {
+  homeHref: "https://alfarhainmedicalcentre.com/",
   phone: "09-788 8606",
   phoneHref: "tel:+6097888606",
   whatsapp: "010-901 7606",
@@ -67,7 +68,13 @@ export default function Home() {
     <div className="overflow-hidden bg-[#f7f5ee] pb-20 sm:pb-0">
       <header className="sticky top-0 z-40 border-b border-[#034e4b]/10 bg-[#e8f3ef]/95 backdrop-blur">
         <div className="mx-auto flex max-w-[80rem] items-center justify-between gap-5 px-4 py-4 sm:px-6 lg:px-8">
-          <Image src="/brand/alfarhain-logo.png" alt="Pusat Rawatan Al-Farhain" width={184} height={50} priority unoptimized className="h-11 w-auto" />
+          <a
+            href={clinic.homeHref}
+            aria-label="Kembali ke laman utama Al-Farhain"
+            className="rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#034e4b]"
+          >
+            <Image src="/brand/alfarhain-logo.png" alt="Pusat Rawatan Al-Farhain" width={184} height={50} priority unoptimized className="h-11 w-auto" />
+          </a>
           <nav className="hidden items-center gap-6 text-sm font-semibold text-[#315a52] lg:flex" aria-label="Navigasi utama">
             <a href="#perjalanan" className="hover:text-[#034e4b]">Proses konsultasi</a>
             <a href="#doktor" className="hover:text-[#034e4b]">Doktor</a>
