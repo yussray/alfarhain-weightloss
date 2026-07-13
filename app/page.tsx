@@ -75,10 +75,10 @@ export default function Home() {
           >
             <Image src="/brand/alfarhain-logo.png" alt="Pusat Rawatan Al-Farhain" width={184} height={50} priority unoptimized className="h-11 w-auto" />
           </a>
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-[#315a52] lg:flex" aria-label="Navigasi utama">
-            <a href="#perjalanan" className="hover:text-[#034e4b]">Proses konsultasi</a>
-            <a href="#doktor" className="hover:text-[#034e4b]">Doktor</a>
-            <a href="#lokasi" className="hover:text-[#034e4b]">Lokasi</a>
+          <nav className="hidden items-center gap-8 font-[family-name:var(--font-manrope)] text-[1.0625rem] font-bold tracking-[-0.025em] text-[#28564f] lg:flex" aria-label="Navigasi utama">
+            <a href="#perjalanan" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#31b19e] hover:text-[#034e4b]">Proses konsultasi</a>
+            <a href="#doktor" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#31b19e] hover:text-[#034e4b]">Doktor</a>
+            <a href="#lokasi" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#31b19e] hover:text-[#034e4b]">Lokasi</a>
           </nav>
           <div className="hidden gap-3 sm:flex">
             <Button href={clinic.phoneHref} outline>Telefon klinik</Button>
