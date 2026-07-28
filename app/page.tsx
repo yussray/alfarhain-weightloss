@@ -5,25 +5,26 @@ const clinic = {
   phone: "09-788 8606",
   phoneHref: "tel:+6097888606",
   whatsapp: "010-901 7606",
-  whatsappHref: "https://wa.me/60109017606",
+  whatsappHref: "https://www.wasap.my/60109017606/LPObesity",
   appointmentHref: "https://alfarhainmedicalcentre.com/temu-janji/",
-  locationHref: "https://alfarhainmedicalcentre.com/locations/pusat-rawatan-al-farhain/",
+  locationHref:
+    "https://www.google.com/maps/search/?api=1&query=Pt%205075%20Tingkat%20Bawah%2C%20Pt%205076%20%26%20Pt%205077%20Tingkat%20Bawah%20%26%20Tingkat%20Atas%2C%20Kompleks%20Perniagaan%20Saidina%20Ali%2C%20Kok%20Lanas%2C%2016450%20Kota%20Bharu%2C%20Kelantan",
   hours: "24 jam setiap hari termasuk cuti umum",
   address:
     "Pt 5075 Tingkat Bawah, Pt 5076 & Pt 5077 Tingkat Bawah & Tingkat Atas, Kompleks Perniagaan Saidina Ali, Kok Lanas, 16450 Kota Bharu, Kelantan",
 };
 
 const patientSignals = [
-  ["01", "Berat badan sukar dikawal", "Anda sudah mencuba sendiri, tetapi masih memerlukan panduan yang lebih tersusun dan sesuai dengan keadaan semasa."],
-  ["02", "Risau tentang kesihatan", "Anda mahu memahami kaitan berat badan dengan risiko seperti kencing manis, penyakit jantung dan tekanan darah tinggi."],
-  ["03", "Tidak pasti cara bermula", "Anda mencari ruang yang selesa untuk berbincang dan membina langkah seterusnya bersama doktor."],
+  ["01", "Perlu panduan yang lebih tersusun", "Sesuai untuk individu yang ingin memahami pilihan pengurusan berat badan selepas mencuba perubahan gaya hidup."],
+  ["02", "Ingin menilai kesihatan berkaitan berat badan", "Doktor boleh membantu menilai faktor kesihatan dan gaya hidup yang mungkin mempengaruhi berat badan anda."],
+  ["03", "Mahu mula dengan langkah yang jelas", "Perbincangan awal membantu menentukan langkah seterusnya mengikut keadaan semasa dan keperluan individu."],
 ];
 
 const journey = [
-  ["01", "Mulakan perbualan", "Hubungi pasukan klinik melalui WhatsApp, telefon atau halaman temu janji."],
-  ["02", "Penilaian menyeluruh", "Doktor menilai kesihatan, gaya hidup dan perkara yang mempengaruhi pengurusan berat badan anda."],
-  ["03", "Pelan diperibadikan", "Langkah pengurusan disusun berdasarkan penilaian dan keperluan individu anda."],
-  ["04", "Sokongan berterusan", "Pendidikan, motivasi dan susulan membantu anda meneruskan perubahan dengan lebih terarah."],
+  ["01", "Mulakan perbualan", "Hubungi pasukan klinik melalui WhatsApp, telefon atau halaman temu janji.", "Chat"],
+  ["02", "Penilaian menyeluruh", "Doktor menilai kesihatan, gaya hidup dan perkara yang mempengaruhi pengurusan berat badan anda.", "Semak"],
+  ["03", "Pelan diperibadikan", "Langkah pengurusan disusun berdasarkan penilaian dan keperluan individu anda.", "Pelan"],
+  ["04", "Sokongan berterusan", "Pendidikan, motivasi dan susulan membantu anda meneruskan perubahan dengan lebih terarah.", "Susulan"],
 ];
 
 const support = [
@@ -47,7 +48,7 @@ function Button({ href, children, outline = false, light = false }: { href: stri
       ? "border border-white/25 text-white hover:bg-white/10"
       : "border border-[#123b34]/25 text-[#123b34] hover:bg-white/40"
     : light
-      ? "bg-[#bde75b] text-[#113a32] hover:bg-[#d0f282]"
+      ? "bg-white text-[#034e4b] hover:bg-[#dff4f1]"
       : "bg-[#034e4b] text-white hover:bg-[#023836]";
 
   return <a href={href} className={`inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-center text-sm font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${style}`}>{children}</a>;
@@ -76,9 +77,9 @@ export default function Home() {
             <Image src="/brand/alfarhain-logo.png" alt="Pusat Rawatan Al-Farhain" width={184} height={50} priority unoptimized className="h-11 w-auto" />
           </a>
           <nav className="hidden items-center gap-8 font-[family-name:var(--font-manrope)] text-[1.0625rem] font-bold tracking-[-0.025em] text-[#28564f] lg:flex" aria-label="Navigasi utama">
-            <a href="#perjalanan" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#31b19e] hover:text-[#034e4b]">Proses konsultasi</a>
-            <a href="#doktor" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#31b19e] hover:text-[#034e4b]">Doktor</a>
-            <a href="#lokasi" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#31b19e] hover:text-[#034e4b]">Lokasi</a>
+            <a href="#perjalanan" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#00A6A0] hover:text-[#034e4b]">Proses konsultasi</a>
+            <a href="#doktor" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#00A6A0] hover:text-[#034e4b]">Doktor</a>
+            <a href="#lokasi" className="border-b-2 border-transparent py-2 transition-colors hover:border-[#00A6A0] hover:text-[#034e4b]">Lokasi</a>
           </nav>
           <div className="hidden gap-3 sm:flex">
             <Button href={clinic.phoneHref} outline>Telefon klinik</Button>
@@ -92,12 +93,12 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <div className="absolute -left-24 top-16 h-72 w-72 rounded-full border border-white/10" />
             <div className="absolute -left-8 top-32 h-72 w-72 rounded-full border border-white/10" />
-            <div className="absolute -right-36 -top-52 h-[34rem] w-[34rem] rounded-full bg-[#31b19e]/20 blur-3xl" />
+            <div className="absolute -right-36 -top-52 h-[34rem] w-[34rem] rounded-full bg-[#00A6A0]/20 blur-3xl" />
           </div>
           <div className="relative mx-auto grid min-h-[46rem] max-w-[80rem] items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-24">
             <div className="relative z-10 max-w-2xl reveal">
               <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#a9e2da]">
-                <span className="h-2 w-2 rounded-full bg-[#6ed0c2]" /> Klinik Obesiti Al-Farhain
+                <span className="h-2 w-2 rounded-full bg-[#00A6A0]" /> Klinik Obesiti Al-Farhain
               </div>
               <h1 className="mt-7 text-[2.75rem] font-medium leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-[4.75rem]">Urus berat badan dengan pelan yang memahami anda.</h1>
               <p className="mt-7 max-w-xl text-lg leading-8 text-white/75 sm:text-xl">Sokongan doktor untuk menilai kesihatan dan gaya hidup anda, kemudian menyusun langkah pengurusan berat badan yang lebih peribadi dan terarah.</p>
@@ -117,8 +118,8 @@ export default function Home() {
                   <p className="mt-1 text-sm text-white/65">Pusat Rawatan Al-Farhain Kok Lanas</p>
                 </div>
               </div>
-              <div className="absolute -right-3 top-8 rounded-2xl bg-[#bde75b] px-4 py-3 text-[#123b34] shadow-lg sm:-right-6 sm:top-12 sm:px-5">
-                <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em]">Klinik dibuka</p><p className="mt-0.5 text-lg font-bold">24 jam</p>
+              <div className="absolute -right-3 top-8 rounded-2xl bg-[#c51f2f] px-4 py-3 text-white shadow-lg sm:-right-6 sm:top-12 sm:px-5">
+                <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em]">Perkhidmatan</p><p className="mt-0.5 text-lg font-bold">Klinik 24 Jam</p>
               </div>
             </div>
           </div>
@@ -133,19 +134,21 @@ export default function Home() {
         </section>
 
         <section className="px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-          <div className="mx-auto grid max-w-[80rem] gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <Heading eyebrow="Ruang untuk bermula" title="Anda tidak perlu mencari jawapan seorang diri." description="Pengurusan berat badan boleh menjadi perjalanan yang mencabar. Perbualan bersama doktor membantu anda memahami keadaan semasa sebelum menentukan langkah seterusnya." />
-            <div className="divide-y divide-[#034e4b]/15 border-y border-[#034e4b]/15">
+          <div className="mx-auto max-w-[80rem]">
+            <div className="mx-auto text-center [&>div]:mx-auto [&_p]:mx-auto">
+              <Heading eyebrow="Ruang untuk bermula" title="Bermula dengan penilaian yang lebih jelas." description="Perbualan bersama doktor membantu anda memahami keadaan semasa sebelum menentukan langkah pengurusan berat badan yang sesuai." />
+            </div>
+            <div className="mt-12 divide-y divide-[#034e4b]/15 border-y border-[#034e4b]/15">
               {patientSignals.map(([number, title, description]) => <div key={number} className="grid gap-4 py-7 sm:grid-cols-[3rem_1fr] sm:gap-6 sm:py-8"><span className="font-mono text-sm text-[#034e4b]/45">{number}</span><div><h3 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h3><p className="mt-2 max-w-xl leading-7 text-[#5f6d6c]">{description}</p></div></div>)}
             </div>
           </div>
         </section>
 
-        <section id="perjalanan" className="bg-[#f0eadc] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <section id="perjalanan" className="bg-[#e6f5f3] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="mx-auto max-w-[80rem]">
             <Heading eyebrow="Perjalanan konsultasi" title="Daripada perbualan pertama kepada pelan yang lebih jelas." description="Setiap langkah bermula dengan penilaian. Cadangan seterusnya bergantung pada keadaan dan keperluan individu." />
             <ol className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              {journey.map(([step, title, description]) => <li key={step} className="flex min-h-[17rem] flex-col rounded-[1.75rem] border border-[#034e4b]/10 bg-[#f9f7f0] p-6 transition-transform hover:-translate-y-1 sm:p-7"><span className="text-xs font-bold tracking-[0.2em] text-[#034e4b]/50">LANGKAH {step}</span><div className="mt-auto pt-12"><h3 className="text-xl font-semibold tracking-tight">{title}</h3><p className="mt-3 text-sm leading-6 text-[#5f6d6c]">{description}</p></div></li>)}
+              {journey.map(([step, title, description, visual]) => <li key={step} className="flex min-h-[18rem] flex-col rounded-[1.75rem] border border-[#034e4b]/10 bg-white p-6 transition-transform hover:-translate-y-1 sm:p-7"><div className="flex items-start justify-between gap-4"><span className="text-xs font-bold tracking-[0.2em] text-[#034e4b]/50">LANGKAH {step}</span><span className="rounded-full bg-[#00A6A0]/15 px-3 py-1 text-xs font-bold text-[#034e4b]">{visual}</span></div><div className="mt-8 flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-[#00A6A0] text-2xl font-semibold text-[#023836]">{step}</div><div className="mt-auto pt-8"><h3 className="text-xl font-semibold tracking-tight">{title}</h3><p className="mt-3 text-sm leading-6 text-[#5f6d6c]">{description}</p></div></li>)}
             </ol>
           </div>
         </section>
@@ -163,7 +166,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-[80rem] gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
             <div className="lg:sticky lg:top-32 lg:self-start"><Heading eyebrow="Kenali doktor anda" title="Dipimpin dengan empati, disusun dengan teliti." description="Dr. Syaza dan Dr. Athirah mengendalikan Klinik Obesiti Al-Farhain dengan pendekatan berpusatkan pesakit." /><div className="mt-8"><Button href={clinic.whatsappHref}>Tanya pasukan klinik</Button></div></div>
             <div className="grid gap-5 sm:grid-cols-2">
-              {[["Dr. Syaza", "/doctors/dr-syaza.jpg", "Potret Dr. Syaza"], ["Dr. Nur Athirah Binti Hashim", "/doctors/dr-athirah.jpg", "Potret Dr. Nur Athirah Binti Hashim"]].map(([name, image, alt]) => <figure key={name} className="overflow-hidden rounded-[2rem] bg-[#dce5df]"><div className="relative aspect-[4/5]"><Image src={image} alt={alt} fill unoptimized sizes="(max-width: 640px) 92vw, 30vw" className="object-cover object-top" /></div><figcaption className="border-t border-[#034e4b]/10 bg-[#e7eee9] p-6"><p className="text-xl font-semibold tracking-tight">{name}</p><p className="mt-1 text-sm text-[#5f6d6c]">Doktor Klinik Obesiti</p></figcaption></figure>)}
+              {[["Dr. Syaza Afina Binti Azman", "/doctors/dr-syaza.jpg", "Potret Dr. Syaza Afina Binti Azman"], ["Dr. Nur Athirah Binti Hashim", "/doctors/dr-athirah.jpg", "Potret Dr. Nur Athirah Binti Hashim"]].map(([name, image, alt]) => <figure key={name} className="overflow-hidden rounded-[2rem] bg-[#dce5df]"><div className="relative aspect-[4/5]"><Image src={image} alt={alt} fill unoptimized sizes="(max-width: 640px) 92vw, 30vw" className="object-cover object-top" /></div><figcaption className="border-t border-[#034e4b]/10 bg-[#e7eee9] p-6"><p className="text-xl font-semibold tracking-tight">{name}</p><p className="mt-1 text-sm text-[#5f6d6c]">Doktor Klinik Obesiti</p></figcaption></figure>)}
             </div>
           </div>
         </section>
@@ -180,12 +183,12 @@ export default function Home() {
         <section id="lokasi" className="px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="mx-auto grid max-w-[80rem] overflow-hidden rounded-[2rem] bg-[#dff0ea] lg:min-h-[38rem] lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[22rem] overflow-hidden"><Image src="/clinic/alfarhain-kok-lanas.webp" alt="Pusat Rawatan Al-Farhain di Kok Lanas" fill unoptimized sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top lg:origin-top-left lg:scale-[1.35] lg:object-left-top" /></div>
-            <div className="p-7 sm:p-10 lg:p-14"><p className="text-xs font-bold uppercase tracking-[0.22em] text-[#034e4b]">Kunjungi kami</p><h2 className="mt-4 text-3xl font-medium tracking-[-0.04em] sm:text-4xl">Pusat Rawatan Al-Farhain Kok Lanas</h2><p className="mt-8 leading-7 text-[#5f6d6c]">{clinic.address}</p><p className="mt-5 font-semibold text-[#315a52]">{clinic.hours}</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button href={clinic.locationHref}>Lihat lokasi klinik</Button><Button href={clinic.phoneHref} outline>Telefon {clinic.phone}</Button></div></div>
+            <div className="flex flex-col items-center justify-center p-7 text-center sm:p-10 lg:p-14"><p className="text-xs font-bold uppercase tracking-[0.22em] text-[#034e4b]">Kunjungi kami</p><h2 className="mt-4 max-w-xl text-3xl font-medium tracking-[-0.04em] sm:text-4xl">Kunjungi kami di Pusat Rawatan Al-Farhain Kok Lanas</h2><p className="mt-8 max-w-2xl leading-7 text-[#5f6d6c]">{clinic.address}</p><p className="mt-5 font-semibold text-[#315a52]">{clinic.hours}</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button href={clinic.locationHref}>Buka Google Maps</Button><Button href={clinic.phoneHref} outline>Telefon {clinic.phone}</Button></div></div>
           </div>
         </section>
 
         <section className="px-4 pb-20 sm:px-6 sm:pb-28 lg:px-8">
-          <div className="relative mx-auto max-w-[80rem] overflow-hidden rounded-[2rem] bg-[#bde75b] px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20"><div className="relative max-w-3xl"><p className="text-xs font-bold uppercase tracking-[0.22em] text-[#22544b]">Langkah pertama</p><h2 className="mt-4 text-4xl font-medium leading-[1.05] tracking-[-0.045em] text-[#123b34] sm:text-5xl lg:text-6xl">Mulakan dengan satu perbualan yang jujur tentang kesihatan anda.</h2><p className="mt-6 max-w-2xl text-lg leading-8 text-[#315a52]">Hubungi pasukan Pusat Rawatan Al-Farhain untuk bertanya tentang Klinik Obesiti atau mengatur temu janji.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button href={clinic.whatsappHref}>WhatsApp {clinic.whatsapp}</Button><Button href={clinic.appointmentHref} outline>Buat temu janji</Button></div></div></div>
+          <div className="relative mx-auto max-w-[80rem] overflow-hidden rounded-[2rem] bg-[#00A6A0] px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20"><div className="relative max-w-3xl"><p className="text-xs font-bold uppercase tracking-[0.22em] text-[#023836]">Langkah pertama</p><h2 className="mt-4 text-4xl font-medium leading-[1.05] tracking-[-0.045em] text-[#023836] sm:text-5xl lg:text-6xl">Mulakan dengan satu perbualan yang jujur tentang kesihatan anda.</h2><p className="mt-6 max-w-2xl text-lg leading-8 text-[#023836]">Hubungi pasukan Pusat Rawatan Al-Farhain untuk bertanya tentang Klinik Obesiti atau mengatur temu janji.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button href={clinic.whatsappHref}>WhatsApp {clinic.whatsapp}</Button><Button href={clinic.appointmentHref} outline>Buat temu janji</Button></div></div></div>
         </section>
 
         <p className="mx-auto max-w-[80rem] px-4 pb-10 text-center text-xs leading-5 text-[#5f6d6c]">Maklumat ini bertujuan sebagai penerangan umum dan bukan pengganti konsultasi perubatan. Kesesuaian setiap pilihan bergantung pada penilaian doktor.</p>
